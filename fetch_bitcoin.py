@@ -41,7 +41,7 @@ def update_markdown(btc_data):
 🔄 **이 파일은 GitHub Actions에 의해 자동으로 업데이트됩니다.**
 """
 
-    with open("bitcoin_prices.md", "w") as f:
+    with open("README.md", "w") as f:
         f.write(markdown_content)
 
 # 실행
