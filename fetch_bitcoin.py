@@ -1,5 +1,5 @@
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # API URL
 API_URL = "https://api.coinpaprika.com/v1/tickers/btc-bitcoin"
