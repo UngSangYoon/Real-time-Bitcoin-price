@@ -22,13 +22,13 @@ jobs:
         run: pip install requests
 
       - name: 가격 정보 가져오기 및 업데이트
-        run: python fetch_crypto.py
+        run: python fetch_bitcoin.py
 
       - name: 변경 사항 커밋 및 푸시
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions@users.noreply.github.com"
-          git add crypto_prices.md
+          git add README.md
           git commit -m "🔄 자동 업데이트: 비트코인 가격 최신화"
           git push
         continue-on-error: true  # 변경사항 없으면 에러 무시
