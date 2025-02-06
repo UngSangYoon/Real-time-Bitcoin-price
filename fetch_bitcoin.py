@@ -31,20 +31,20 @@ def update_markdown(btc_data):
     
     # 9시간 더해서 KST 변환
     now_kst = now_utc + timedelta(hours=9)
-    now_str = now_kst.strftime("%Y-%m-%d %H:%M KST")
+    now_str = now_kst.strftime("%Y-%m-%d %H:%M")
 
     markdown_content = f"""# 🪙 비트코인 가격 업데이트 ({now_str})
 
-    | 항목                | 값 |
-    |--------------------|----------------|
-    | 💰 현재 가격 (USD) | ${btc_data["price"]:.2f} |
-    | ⏳ 1시간 변동률    | {btc_data["change_1h"]:.2f}% |
-    | 📆 24시간 변동률   | {btc_data["change_24h"]:.2f}% |
-    | 🔝 역대 최고가 (ATH) | ${btc_data["ath_price"]:.2f} |
-    | 📉 ATH 대비 하락률 | {btc_data["percent_from_ath"]:.2f}% |
+| 항목                | 값 |
+|--------------------|----------------|
+| 💰 현재 가격 (USD) | ${btc_data["price"]:.2f} |
+| ⏳ 1시간 변동률    | {btc_data["change_1h"]:.2f}% |
+| 📆 24시간 변동률   | {btc_data["change_24h"]:.2f}% |
+| 🔝 역대 최고가 (ATH) | ${btc_data["ath_price"]:.2f} |
+| 📉 ATH 대비 하락률 | {btc_data["percent_from_ath"]:.2f}% |
 
-    🔄 **이 파일은 GitHub Actions에 의해 자동으로 업데이트됩니다.**
-    """
+🔄 **이 파일은 GitHub Actions에 의해 자동으로 업데이트됩니다.**
+"""
 
     with open("README.md", "w") as f:
         f.write(markdown_content)
